@@ -24,14 +24,16 @@ export default async function GetIncompleteTodos() {
 
   return(
     <div>I can see the page.
-        {data?.map((todo) => (
-        <div key={todo.todoId}>
-          <h2>{todo.todoname}</h2>
-          <p>{todo.tododescription}</p>
-          <p>{todo.completed ? 'Completed' : 'Not completed'}</p>
-          <p>Added on: {new Date(todo.timeadded).toLocaleString()}</p>
-        </div>
-      ))}
+        {data?
+        data?.map((todo) => (
+            <div key={todo.todoId}>
+              <h2>{todo.todoname}</h2>
+              <p>{todo.tododescription}</p>
+              <p>{todo.completed ? 'Completed' : 'Not completed'}</p>
+              <p>Added on: {new Date(todo.timeadded).toLocaleString()}</p>
+            </div>
+          )):
+          <p>Go pee yourself!</p>}
     </div>
   )
 }
