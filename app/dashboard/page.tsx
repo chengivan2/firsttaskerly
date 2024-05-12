@@ -1,6 +1,7 @@
 import React from 'react'
 import { createClient } from "@/utils/supabase/server";
 import Todoform from './addtodos/todoform';
+import Link from 'next/link';
 
 export default async function page() {
     const supabase = createClient();
@@ -11,5 +12,5 @@ export default async function page() {
 
   return ( user?
     <Todoform /> :
-    <div>page</div>)
+    <div>You need to <Link href="/login">Sign In</Link></div>)
 }
