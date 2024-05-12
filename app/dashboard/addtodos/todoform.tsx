@@ -8,7 +8,7 @@ export default function Todoform() {
 
     const supabase = createClient();
     await supabase.auth.signOut();
-    return redirect("/login");
+    return redirect("/logout");
   };
   return (
     <div>
